@@ -20,8 +20,8 @@ namespace OPCardsMod.Cards
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
 		{
             cardInfo.categories = new CardCategory[] { BFG.category };
-            cardInfo.blacklistedCategories = new CardCategory[] { Sniper.category, AssaultRifle.category, GaussCannon.category};
-
+            cardInfo.blacklistedCategories = new CardCategory[] { Sniper.category, AssaultRifle.category, GaussCannon.category, Laser.category};
+			cardInfo.allowMultiple = false;
 
             var BFGgun = CardManager.cards.Values
 			  .Where((card) => card.cardInfo.cardName.ToLower() == "Homing".ToLower())

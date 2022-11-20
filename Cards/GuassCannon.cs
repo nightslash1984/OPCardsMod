@@ -17,7 +17,7 @@ namespace OPCardsMod.Cards
         {
             cardInfo.allowMultiple = false;
             cardInfo.categories = new CardCategory[] { GaussCannon.category };
-            cardInfo.blacklistedCategories = new CardCategory[] { Sniper.category, AssaultRifle.category, BFG.category };
+            cardInfo.blacklistedCategories = new CardCategory[] { Sniper.category, AssaultRifle.category, BFG.category, Laser.category };
 
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card]{GetTitle()} has been setup");

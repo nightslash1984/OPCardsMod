@@ -40,6 +40,8 @@ namespace OPCardsMod
             CustomCard.BuildCard<DoubleJump>();
             CustomCard.BuildCard<BFG>();
             CustomCard.BuildCard<Laser>();
+            //CustomCard.BuildCard<Minigun>();
+            CustomCard.BuildCard<Medkit>();
         }
     }
 }
