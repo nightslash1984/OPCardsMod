@@ -93,3 +93,4 @@ C:\Users\halse\Desktop\Mod Creations\OPCardsMod\OPCardsMod\obj\Debug\netstandard
 C:\Users\halse\Desktop\Mod Creations\OPCardsMod\OPCardsMod\obj\Debug\netstandard2.1\OPCardsMod.csproj.CopyComplete
 C:\Users\halse\Desktop\Mod Creations\OPCardsMod\OPCardsMod\obj\Debug\netstandard2.1\OPCardsMod.dll
 C:\Users\halse\Desktop\Mod Creations\OPCardsMod\OPCardsMod\obj\Debug\netstandard2.1\OPCardsMod.pdb
+C:\Users\halse\Desktop\Mod Creations\OPCardsMod\OPCardsMod\bin\Debug\netstandard2.1\ModsPlus.dll

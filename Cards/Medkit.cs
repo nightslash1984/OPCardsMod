@@ -7,10 +7,12 @@ using UnboundLib;
 using UnboundLib.Cards;
 using UnityEngine;
 using OPCardsMod.MonoBehaviours;
+using ModsPlus;
+using UnityEngine.Assertions;
 
 namespace OPCardsMod.Cards
 {
-    class Medkit : CustomCard
+    public class Medkit : CustomEffectCard<MedkitHandler>
     {
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
@@ -19,56 +21,26 @@ namespace OPCardsMod.Cards
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card]{GetTitle()} has been setup");
         }
-        public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
+        protected override void Added(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            var mono = player.gameObject.GetOrAddComponent<Medkit_mono>();
+            
 
             //Edits values on player when card is selected
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
         }
-        public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
+        protected override void Removed(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            Destroy(player.gameObject.GetComponent<Medkit_mono>());
             //Run when the card is removed from the player
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card] {GetTitle()} has been removed from player {player.playerID}.");
         }
 
-        protected override string GetTitle()
+        public override CardDetails Details => new CardDetails
         {
-            return "Medkit";
-        }
-        protected override string GetDescription()
-        {
-            return "When you block you gain max health *3 for 15 seconds";
-        }
-        protected override GameObject GetCardArt()
-        {
-            return null;
-        }
-        protected override CardInfo.Rarity GetRarity()
-        {
-            return CardInfo.Rarity.Rare;
-        }
-        protected override CardInfoStat[] GetStats()
-        {
-            return new CardInfoStat[]
-            {
-                new CardInfoStat()
-                {
-                    positive = false,
-                    stat = "Block Dooldown",
-                    amount = "*2",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                }
-            };
-        }
-        protected override CardThemeColor.CardThemeColorType GetTheme()
-        {
-            return CardThemeColor.CardThemeColorType.PoisonGreen;
-        }
-        public override string GetModName()
-        {
-            return OPCardsMod.ModInitials;
-        }
+            Title = "Medkit",
+            Description = "On Rightclick health is trippled for 5 seconds",
+            ModName = OPCardsMod.ModInitials,
+            Rarity = CardInfo.Rarity.Rare,
+            Theme = CardThemeColor.CardThemeColorType.PoisonGreen,
+        };
     }
 }

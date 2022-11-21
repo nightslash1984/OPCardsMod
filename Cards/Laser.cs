@@ -16,14 +16,18 @@ namespace OPCardsMod.Cards
 
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
-            cardInfo.categories = new CardCategory[] { GaussCannon.category };
+            cardInfo.categories = new CardCategory[] { Laser.category };
             cardInfo.blacklistedCategories = new CardCategory[] { BFG.category };
+
+            gun.gravity = 0f;
+            gun.projectileSpeed = 150f;
+            gun.reloadTime = 0.003f;
+            gun.attackSpeed = 100f;
+            gun.damage = 0.01f;
+            gun.reloadTimeAdd = 0.25f;
 
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card]{GetTitle()} has been setup");
-            gun.ignoreWalls = true;
-            gun.projectileSpeed = 10f;
-            gun.damage = 1.25f;
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
