@@ -29,7 +29,6 @@ namespace OPCardsMod.Cards
 			  .FirstOrDefault();
 
 
-
 			gun.objectsToSpawn = BFGgun.objectsToSpawn;
 
 			gun.gravity = 0f;

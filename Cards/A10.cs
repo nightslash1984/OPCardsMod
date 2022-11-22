@@ -6,24 +6,32 @@ using System.Text;
 using System.Threading.Tasks;
 using UnboundLib;
 using UnboundLib.Cards;
+using UnboundLib.Utils;
 using UnityEngine;
 
 namespace OPCardsMod.Cards
 {
-    class Minigun : CustomCard
+    class A10 : CustomCard
     {
         internal static CardCategory category = CustomCardCategories.instance.CardCategory("BFG");
 
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
-            cardInfo.categories = new CardCategory[] { Minigun.category };
+            cardInfo.categories = new CardCategory[] { A10.category };
             cardInfo.blacklistedCategories = new CardCategory[] { Sniper.category, AssaultRifle.category, GaussCannon.category, Laser.category, BFG.category};
+
+            var A10Gun = CardManager.cards.Values
+              .Where((card) => card.cardInfo.cardName.ToLower() == "Explosive bullet".ToLower())
+              .Select((card) => card.cardInfo.gameObject.GetComponent<Gun>())
+              .FirstOrDefault();
+
+            gun.objectsToSpawn = A10Gun.objectsToSpawn;
 
             gun.attackSpeed = 0.1f;
             gun.damage = 0.2f;
             gun.ammo = 100;
-            gun.reloadTime = 30f;
-            gun.projectileSpeed = 1.75f;
+            gun.reloadTime = 15f;
+            gun.projectileSpeed = 10f;
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
@@ -38,11 +46,11 @@ namespace OPCardsMod.Cards
 
         protected override string GetTitle()
         {
-            return "CardName";
+            return "A10";
         }
         protected override string GetDescription()
         {
-            return "CardDescription";
+            return "A10";
         }
         protected override GameObject GetCardArt()
         {

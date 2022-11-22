@@ -20,7 +20,7 @@ namespace OPCardsMod
     {
         private const string ModId = "com.OPCards.Mod";
         private const string ModName = "OPCardsMod";
-        public const string Version = "0.1.0"; // What version are we on (major.minor.patch)?
+        public const string Version = "3.0.0"; // What version are we on (major.minor.patch)?
         public const string ModInitials = "OPC";
 
         public static OPCardsMod instance { get; private set; }
@@ -41,7 +41,7 @@ namespace OPCardsMod
             CustomCard.BuildCard<DoubleJump>();
             CustomCard.BuildCard<BFG>();
             CustomCard.BuildCard<Laser>();
-            //CustomCard.BuildCard<Minigun>();
+            CustomCard.BuildCard<A10>();
             CustomCard.BuildCard<Medkit>();
         }
     }
