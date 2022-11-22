@@ -7,6 +7,7 @@ using UnboundLib;
 using UnboundLib.Cards;
 using ModdingUtils.Utils;
 using UnityEngine;
+using UnboundLib.Utils;
 
 namespace OPCardsMod.Cards
 {
@@ -16,12 +17,18 @@ namespace OPCardsMod.Cards
         {
             statModifiers.health = 7;
 
+            ModdingUtils.Extensions.CardInfoExtension.GetAdditionalData(cardInfo).canBeReassigned = false;
+
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card]{GetTitle()} has been setup");
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            ModdingUtils.Utils.Cards.instance.RemoveAllCardsFromPlayer(player);
+            Unbound.Instance.ExecuteAfterFrames(10, () =>
+            {
+                var cardsToRemove = player.data.currentCards.Where(c => c.cardName != cardInfo.cardName).ToArray();
+                ModdingUtils.Utils.Cards.instance.RemoveCardsFromPlayer(player, cardsToRemove, editCardBar: true);
+            });
             //Edits values on player when card is selected
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
         }
