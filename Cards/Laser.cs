@@ -23,8 +23,7 @@ namespace OPCardsMod.Cards
             gun.projectileSpeed = 150f;
             gun.reloadTime = 0.003f;
             gun.attackSpeed = 0.04f;
-            gun.damage = 0.01f;
-            gun.reloadTimeAdd = 0.25f;
+            gun.damage = 0.004f;
 
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card]{GetTitle()} has been setup");
@@ -46,7 +45,7 @@ namespace OPCardsMod.Cards
         }
         protected override string GetDescription()
         {
-            return "Shoots through walls";
+            return "Shoots a laser of bullets";
         }
         protected override GameObject GetCardArt()
         {
@@ -63,24 +62,38 @@ namespace OPCardsMod.Cards
                 new CardInfoStat()
                 {
                     positive = true,
-                    stat = "Shoot through walls",
-                    amount = "",
+                    stat = "Bullet gravity",
+                    amount = "0",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
                 },
                 new CardInfoStat()
                 {
-                    positive= true,
+                    positive = true,
                     stat = "Bullet speed",
-                    amount = "x10",
-                    simepleAmount= CardInfoStat.SimpleAmount.notAssigned
+                    amount = "150x",
+                    simepleAmount = CardInfoStat.SimpleAmount.aHugeAmountOf
                 },
                 new CardInfoStat()
                 {
-                    positive= true,
+                    positive = true,
+                    stat = "ammo",
+                    amount = "infinite",
+                    simepleAmount = CardInfoStat.SimpleAmount.aHugeAmountOf
+                },
+                new CardInfoStat()
+                {
+                    positive = true,
+                    stat = "attack speed",
+                    amount = "400%",
+                    simepleAmount = CardInfoStat.SimpleAmount.aHugeAmountOf
+                },
+                new CardInfoStat()
+                {
+                    positive = false,
                     stat = "Damage",
-                    amount = "+25%",
-                    simepleAmount= CardInfoStat.SimpleAmount.notAssigned
-                }
+                    amount = "0.04%",
+                    simepleAmount = CardInfoStat.SimpleAmount.aLotLower
+                },
             };
         }
         protected override CardThemeColor.CardThemeColorType GetTheme()

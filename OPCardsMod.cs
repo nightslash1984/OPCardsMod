@@ -43,6 +43,7 @@ namespace OPCardsMod
             CustomCard.BuildCard<Laser>();
             CustomCard.BuildCard<A10>();
             CustomCard.BuildCard<Medkit>();
+            CustomCard.BuildCard<TheBenefit>();
         }
     }
 }
