@@ -27,7 +27,7 @@ namespace OPCardsMod.Cards
             gun.projectileSpeed = 150f;
             gun.reloadTime = 0.003f;
             gun.attackSpeed = 0.04f;
-            gun.damage = 0.004f;
+            gun.damage = 0.009f;
 
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card]{GetTitle()} has been setup");

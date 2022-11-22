@@ -39,7 +39,7 @@ namespace OPCardsMod.Cards
 
         public override void OnReassignCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            data.health *= 7;
+            data.health *= 3;
         }
 
         protected override string GetTitle()

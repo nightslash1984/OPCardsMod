@@ -28,16 +28,18 @@ namespace OPCardsMod.Cards
 			  .Select((card) => card.cardInfo.gameObject.GetComponent<Gun>())
 			  .FirstOrDefault();
 
+            gun.objectsToSpawn = BFGgun.objectsToSpawn;
 
-			gun.objectsToSpawn = BFGgun.objectsToSpawn;
+			gun.projectileColor = Color.green;
 
 			gun.gravity = 0f;
-			gun.projectileSpeed = 0.25f;
-			gun.projectileSize = 1.25f;
+			gun.projectileSpeed = 0.40f;
+			gun.projectileSize = 1.15f;
 			gun.damage = 50f;
 			gun.ammo = -1000;
 			gun.reloadTime = 35.0f;
 			gun.destroyBulletAfter = 100000f;
+			statModifiers.movementSpeed = 0.75f;
 		}
 		public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
 		{
