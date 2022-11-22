@@ -20,15 +20,17 @@ namespace OPCardsMod.Cards
             cardInfo.categories = new CardCategory[] { A10.category };
             cardInfo.blacklistedCategories = new CardCategory[] { Sniper.category, AssaultRifle.category, GaussCannon.category, Laser.category, BFG.category};
 
+
             var A10Gun = CardManager.cards.Values
               .Where((card) => card.cardInfo.cardName.ToLower() == "Explosive bullet".ToLower())
               .Select((card) => card.cardInfo.gameObject.GetComponent<Gun>())
               .FirstOrDefault();
 
             gun.objectsToSpawn = A10Gun.objectsToSpawn;
+            cardInfo.allowMultiple = false;
 
             gun.attackSpeed = 0.1f;
-            gun.damage = 0.2f;
+            gun.damage = 0.1f;
             gun.ammo = 100;
             gun.reloadTime = 15f;
             gun.projectileSpeed = 10f;
@@ -50,7 +52,7 @@ namespace OPCardsMod.Cards
         }
         protected override string GetDescription()
         {
-            return "A10";
+            return "Bullets fly at the speed of sound and explode";
         }
         protected override GameObject GetCardArt()
         {
@@ -67,8 +69,36 @@ namespace OPCardsMod.Cards
                 new CardInfoStat()
                 {
                     positive = true,
-                    stat = "Effect",
-                    amount = "No",
+                    stat = "Attack Speed",
+                    amount = "+90%",
+                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
+                },
+                new CardInfoStat()
+                {
+                    positive = false,
+                    stat = "Damage",
+                    amount = "-90%",
+                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
+                },
+                new CardInfoStat()
+                {
+                    positive = true,
+                    stat = "Ammo",
+                    amount = "+100",
+                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
+                },
+                new CardInfoStat()
+                {
+                    positive = false,
+                    stat = "reload time",
+                    amount = "15s",
+                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
+                },
+                new CardInfoStat()
+                {
+                    positive = true,
+                    stat = "Bulleet Speed",
+                    amount = "10x",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
                 }
             };

@@ -37,7 +37,7 @@ namespace OPCardsMod.Cards
         }
         protected override string GetDescription()
         {
-            return "";
+            return "adds another jump";
         }
         protected override GameObject GetCardArt()
         {
