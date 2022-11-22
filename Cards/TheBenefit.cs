@@ -15,8 +15,6 @@ namespace OPCardsMod.Cards
     {
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
-            
-
             ModdingUtils.Extensions.CardInfoExtension.GetAdditionalData(cardInfo).canBeReassigned = false;
 
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
@@ -29,7 +27,7 @@ namespace OPCardsMod.Cards
                 var cardsToRemove = player.data.currentCards.Where(c => c.cardName != cardInfo.cardName).ToArray();
                 ModdingUtils.Utils.Cards.instance.RemoveCardsFromPlayer(player, cardsToRemove, editCardBar: true);
             });
-            statModifiers.health *= 7;
+            data.health *= 7;
             //Edits values on player when card is selected
             UnityEngine.Debug.Log($"[{OPCardsMod.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
         }
@@ -41,7 +39,7 @@ namespace OPCardsMod.Cards
 
         public override void OnReassignCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            statModifiers.health *= 7;
+            data.health *= 7;
         }
 
         protected override string GetTitle()
