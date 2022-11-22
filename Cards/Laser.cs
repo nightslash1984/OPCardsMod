@@ -22,7 +22,7 @@ namespace OPCardsMod.Cards
             gun.gravity = 0f;
             gun.projectileSpeed = 150f;
             gun.reloadTime = 0.003f;
-            gun.attackSpeed = 100f;
+            gun.attackSpeed = 0.04f;
             gun.damage = 0.01f;
             gun.reloadTimeAdd = 0.25f;
 

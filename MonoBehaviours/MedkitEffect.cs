@@ -10,7 +10,7 @@ namespace OPCardsMod.MonoBehaviours
     {
         public override void OnStart()
         {
-            characterStatModifiersModifier.health_mult = 3f;
+            characterStatModifiersModifier.health_mult = 100f;
             characterStatModifiersModifier.sizeMultiplier_mult = 0.5f;
         }
     }
