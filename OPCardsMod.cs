@@ -20,7 +20,7 @@ namespace OPCardsMod
     {
         private const string ModId = "com.OPCards.Mod";
         private const string ModName = "OPCardsMod";
-        public const string Version = "3.0.0"; // What version are we on (major.minor.patch)?
+        public const string Version = "1.3.0"; // What version are we on (major.minor.patch)?
         public const string ModInitials = "OPC";
 
         public static OPCardsMod instance { get; private set; }
