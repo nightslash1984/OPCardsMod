@@ -13,7 +13,7 @@ namespace OPCardsMod.Cards
 {
     class A10 : CustomCard
     {
-        internal static CardCategory category = CustomCardCategories.instance.CardCategory("BFG");
+        internal static CardCategory category = CustomCardCategories.instance.CardCategory("A10");
 
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {

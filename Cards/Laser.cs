@@ -24,9 +24,9 @@ namespace OPCardsMod.Cards
             gun.projectileColor = Color.red;
 
             gun.gravity = 0f;
-            gun.projectileSpeed = 150f;
+            gun.projectileSpeed = 75f;
             gun.reloadTime = 0.003f;
-            gun.attackSpeed = 0.04f;
+            gun.attackSpeed = 0.1f;
             gun.damage = 0.009f;
 
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
