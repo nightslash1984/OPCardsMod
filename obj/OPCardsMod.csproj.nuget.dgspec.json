@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\halse\\Desktop\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj": {}
+    "C:\\Users\\halse\\Documents\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj": {}
   },
   "projects": {
-    "C:\\Users\\halse\\Desktop\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj": {
+    "C:\\Users\\halse\\Documents\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\halse\\Desktop\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj",
+        "projectUniqueName": "C:\\Users\\halse\\Documents\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj",
         "projectName": "OPCardsMod",
-        "projectPath": "C:\\Users\\halse\\Desktop\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj",
+        "projectPath": "C:\\Users\\halse\\Documents\\Mod Creations\\OPCardsMod\\OPCardsMod\\OPCardsMod.csproj",
         "packagesPath": "C:\\Users\\halse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\halse\\Desktop\\Mod Creations\\OPCardsMod\\OPCardsMod\\obj\\",
+        "outputPath": "C:\\Users\\halse\\Documents\\Mod Creations\\OPCardsMod\\OPCardsMod\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\halse\\AppData\\Roaming\\NuGet\\NuGet.Config",
